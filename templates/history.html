@@ -1,36 +1,59 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<<html>
+<head>
+  <title>History - Library System</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
 
-{% block title %}History{% endblock %}
+<body>
 
-{% block content %}
-<h2>Checkout History</h2>
+  <div class="navbar">
+    <h2>📚 Library System</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="add_book.html">Add Book</a>
+      <a href="history.html">History</a>
+      <a href="login.html">Login</a>
+    </div>
+  </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Book</th>
-      <th>Checkout Date</th>
-      <th>Return Date</th>
-    </tr>
-  </thead>
+  <div class="container">
 
-  <tbody>
-    {% for record in history %}
-    <tr>
-      <td>{{ record.user_id }}</td>
-      <td>{{ record.book_id }}</td>
-      <td>{{ record.checkout_date }}</td>
-      <td>
-        {% if record.return_date %}
-          {{ record.return_date }}
-        {% else %}
-          Not Returned
-        {% endif %}
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    <h2>Borrow / Return History</h2>
 
-{% endblock %}
+    <table class="books-table">
+
+      <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Book Title</th>
+        <th>Action</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>Ali Khan</td>
+        <td>Python Basics</td>
+        <td>Borrowed</td>
+        <td>2026-04-20</td>
+        <td><span class="unavailable">Not Returned</span></td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Maria</td>
+        <td>Web Design</td>
+        <td>Returned</td>
+        <td>2026-04-18</td>
+        <td><span class="available">Returned</span></td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</body>
+</html>> 
