@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Library System{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">📚 Library System</div>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/books">Books</a>
+      <a href="/history">History</a>
+      <a href="/profile">Profile</a>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Library Management System © 2026</p>
+  </footer>
+
+</body>
+</html>
